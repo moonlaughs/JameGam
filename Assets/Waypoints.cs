@@ -7,6 +7,11 @@ public class Waypoints : MonoBehaviour
     
     [Range(0f, 2f)]
     [SerializeField] private float waypointSize = 1f;
+    [Header("Path settings")]
+    // agent should go from 1st to last or vice versa
+    [SerializeField] private bool canLoop = true;
+    // move forward or backwards
+    [SerializeField] private bool isMovingForward = true;
     
     private void OnDrawGizmos()
     {
@@ -23,9 +28,11 @@ public class Waypoints : MonoBehaviour
             Gizmos.DrawLine(transform.GetChild(i).position, transform.GetChild(i + 1).position);
         }
 
-        Gizmos.DrawLine(transform.GetChild(transform.childCount - 1).position, transform.GetChild(0).position);
+        if(canLoop)
+            Gizmos.DrawLine(transform.GetChild(transform.childCount - 1).position, transform.GetChild(0).position);
     }
     
+    // get the correct next waypoint based on a direction
     public Transform GetNextWaypoint(Transform currentWaypoint)
     {
         if (currentWaypoint == null)
@@ -33,14 +40,38 @@ public class Waypoints : MonoBehaviour
             return transform.GetChild(0);
         }
 
-        if(currentWaypoint.GetSiblingIndex() < transform.childCount - 1)
+        // stores index of current waypoint
+        int currentIndex = currentWaypoint.GetSiblingIndex();
+        // stores theindex of the next waypoint to travel towards
+        int nextIndex = currentIndex;
+
+        if(isMovingForward)
         {
-            return transform.GetChild(currentWaypoint.GetSiblingIndex() + 1);
+            nextIndex += 1;
+
+            if(nextIndex == transform.childCount)
+            {
+                if(canLoop)
+                    nextIndex = 0;
+                else
+                {
+                    nextIndex -= 1;
+                }
+            }
         }
         else
         {
-            return transform.GetChild(0);
+            nextIndex -= 1;
+            if(nextIndex < 0)
+            { 
+                if(canLoop)
+                    nextIndex = transform.childCount - 1;
+                else
+                {
+                    nextIndex += 1;
+                }
+            }
         }
-
+        return transform.GetChild(nextIndex);
     }
 }
