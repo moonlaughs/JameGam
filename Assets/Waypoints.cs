@@ -15,7 +15,6 @@ public class Waypoints : MonoBehaviour
     
     private void OnDrawGizmos()
     {
-        // Debug.Log("test)
         foreach (Transform t in transform)
         {
             Gizmos.color = Color.blue;

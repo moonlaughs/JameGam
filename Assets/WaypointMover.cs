@@ -38,7 +38,6 @@ public class WaypointMover : MonoBehaviour
         {
             
             currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
-            // transform.LookAt(currentWaypoint);
         }
         RotateTowardsWaypoint();
     }
