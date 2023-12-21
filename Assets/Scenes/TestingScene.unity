@@ -318,6 +318,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1063907624}
+    - targetCorrespondingSourceObject: {fileID: 4459864851310106429, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761683621}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       insertIndex: -1
@@ -696,6 +699,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &963379601 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4459864851310106429, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 212272837}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1063907623
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,9 +865,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anvil: {fileID: 84478339}
-  Hand: {fileID: 0}
+  Hand: {fileID: 1761683621}
   isPickedUp: 0
   isScaled: 0
+  isHolding: 0
 --- !u!1 &1409074103
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +881,6 @@ GameObject:
   - component: {fileID: 1409074106}
   - component: {fileID: 1409074105}
   - component: {fileID: 1409074104}
-  - component: {fileID: 1409074108}
   m_Layer: 0
   m_Name: PickUpItemCube
   m_TagString: PickUp
@@ -966,19 +974,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1409074108
-MonoBehaviour:
+--- !u!1 &1761683620
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409074103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b42961bc6b5e14b47893de8404bf776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPickedUp: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761683621}
+  m_Layer: 0
+  m_Name: Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1761683621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761683620}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.323, y: -0.75, z: 1.6969995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963379601}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1798888671
 GameObject:
   m_ObjectHideFlags: 0
