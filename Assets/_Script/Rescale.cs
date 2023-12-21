@@ -46,7 +46,6 @@ public class Rescale : MonoBehaviour
             }
             else if (isHolding == true)
             {
-                Debug.Log("penus");
                 Anvil.transform.SetParent(null);
                 rb.isKinematic = false;
                 isHolding = false;
