@@ -7,7 +7,7 @@ public class WalkingScript : StateMachineBehaviour
 {
     float timer;
     Transform player;
-    float chaceRange = 10;
+    float chaceRange = 4f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

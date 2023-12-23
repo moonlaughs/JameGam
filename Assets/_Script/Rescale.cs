@@ -8,7 +8,7 @@ public class Rescale : MonoBehaviour
     [SerializeField] Transform Hand;
     Rigidbody rb;
     public bool isPickedUp;
-    public bool isScaled;
+    public bool isScaled = false;
     public bool isHolding;
 
 

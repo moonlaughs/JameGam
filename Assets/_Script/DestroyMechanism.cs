@@ -33,7 +33,6 @@ public class NewBehaviourScript : MonoBehaviour
     // borrowed logic
     void LiftItem()
     {
-        RaycastHit hit;
         if (Input.GetKeyDown("e"))
         {
             if (isHolding == false)

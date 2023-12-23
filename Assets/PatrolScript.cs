@@ -10,7 +10,7 @@ public class PatrolScript : StateMachineBehaviour
     NavMeshAgent agent;
 
     Transform player;
-    float chaceRange = 10;
+    float chaceRange = 4f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -38,7 +38,8 @@ public class PatrolScript : StateMachineBehaviour
             animator.SetBool("isPatrolling", false);
 
         float distance = Vector3.Distance(animator.transform.position, player.position);
-        if(distance < chaceRange)
+        
+        if (distance < chaceRange)
             animator.SetBool("IsChasing", true);
 
     }

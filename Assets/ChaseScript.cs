@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class ChaseScript : StateMachineBehaviour
 {
@@ -20,9 +21,9 @@ public class ChaseScript : StateMachineBehaviour
         agent.SetDestination(player.position);
         float distance = Vector3.Distance(animator.transform.position, player.position);
 
-        if(distance < 3){
-            // Application.Quit(); // works in game build
-            UnityEditor.EditorApplication.isPlaying = false; // works in Unity Engine only
+        if(distance < 1.5f)
+        {
+            SceneManager.LoadScene(2);
         }
     }
 
