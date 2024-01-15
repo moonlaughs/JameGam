@@ -62,12 +62,12 @@ public class Rescale : MonoBehaviour
             {
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit) && isScaled)
                 {
-                    Anvil.transform.localScale = new Vector3(20, 150, 75);
+                    Anvil.transform.localScale = new Vector3(10, 75, 37.5f);
                     rb.mass = 5;
                     isScaled = false;
                 }else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit) && isHolding == false)
                 {
-                    Anvil.transform.localScale = new Vector3(40, 300, 150);
+                    Anvil.transform.localScale = new Vector3(15, 120, 75);
                     rb.mass += 200;
                     isScaled = true;
                 }
